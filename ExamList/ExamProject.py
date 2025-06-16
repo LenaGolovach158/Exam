@@ -7,7 +7,7 @@ class HangmanGame:
     def __init__(self, root):
         self.root = root
         self.root.title("Виселица")
-        self.root.geometry("500x400")
+        self.root.geometry("1500x1400")
 
         # Список слов для игры
         self.words = [ "библиотека", "яблоко", "банан", "вишня", "дыня", "ежевика",
@@ -129,17 +129,17 @@ class HangmanGame:
         "Рисует части тела висельника в зависимости от количества ошибок"
         errors = self.max_attempts - self.attempts_left
 
-        if errors >= 1:
+        if errors == 1:
             self.canvas.create_oval(140, 70, 160, 90, width=3)  # Голова
-        if errors >= 2:
+        if errors == 2:
             self.canvas.create_line(150, 90, 150, 130, width=3)  # Тело
-        if errors >= 3:
+        if errors == 3:
             self.canvas.create_line(150, 100, 130, 110, width=3)  # Левая рука
-        if errors >= 4:
+        if errors == 4:
             self.canvas.create_line(150, 100, 170, 110, width=3)  # Правая рука
-        if errors >= 5:
+        if errors == 5:
             self.canvas.create_line(150, 130, 130, 160, width=3)  # Левая нога
-        if errors >= 6:
+        if errors == 6:
             self.canvas.create_line(150, 130, 170, 160, width=3)  # Правая нога
 
 
